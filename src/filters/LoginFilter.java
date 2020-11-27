@@ -1,4 +1,4 @@
-/*package filters;
+package filters;
 
 import java.io.IOException;
 
@@ -18,27 +18,27 @@ import models.Employee;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-/*@WebFilter("/*")
+@WebFilter("/*")
 public class LoginFilter implements Filter {
 
     /**
      * Default constructor.
      */
-  /*  public LoginFilter() {
+    public LoginFilter() {
         // TODO Auto-generated constructor stub
     }
 
     /**
      * @see Filter#destroy()
      */
-    /*public void destroy() {
+    public void destroy() {
         // TODO Auto-generated method stub
     }
 
     /**
      * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
      */
- /*   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         String context_path = ((HttpServletRequest)request).getContextPath();
         String servlet_path = ((HttpServletRequest)request).getServletPath();
 
@@ -77,8 +77,8 @@ public class LoginFilter implements Filter {
     /**
      * @see Filter#init(FilterConfig)
      */
-   /* public void init(FilterConfig fConfig) throws ServletException {
+    public void init(FilterConfig fConfig) throws ServletException {
         // TODO Auto-generated method stub
     }
 
-}*/
+}
