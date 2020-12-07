@@ -23,7 +23,7 @@
                     <tr>
                         <td><c:out value="${business.company_name}" /></td>
                         <td><c:out value="${business.title}" /></td>
-                        <td><c:out value="${business.content}" /></td>
+                        <td><a href="<c:url value='/business/show?id=${business.id}' />">詳細</a></td>
                         <td><fmt:formatDate value='${business.plan}' pattern='yyyy-MM-dd' /></td>
                         <td><c:out value="${business.employee.name}" /></td>
                         <td><fmt:formatDate value='${business.updated_at}' pattern='yyyy-MM-dd HH:mm:ss' /></td>
