@@ -26,9 +26,12 @@
 <input type="date" name="plan" value="<fmt:formatDate value='${business.plan}' pattern='yyyy-MM-dd' />" />
 <br /><br />
 
+<!--
 <label for="employee.name">担当者</label><br />
 <input type="text" name="employee.name" value="${sessionScope.login_employee.name}" />
 <br /><br />
+※login_employeeの名前が必ず登録されるように設定しました。
+-->
 
 
 <input type="reset" value="リセットする" />&nbsp;&nbsp;
