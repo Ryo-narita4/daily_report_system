@@ -21,7 +21,7 @@
                 </tr>
                 <c:forEach var="business" items="${businesses}" varStatus="status">
                     <tr>
-                        <td><c:out value="${business.company_name}" /></td>
+                        <td><a href="<c:url value='/company/show?name=${business.company_name}' />"><c:out value="${business.company_name}" /></a></td>
                         <td><c:out value="${business.title}" /></td>
                         <td><a href="<c:url value='/business/show?id=${business.id}' />">詳細</a></td>
                         <td><fmt:formatDate value='${business.plan}' pattern='yyyy-MM-dd' /></td>
@@ -46,7 +46,7 @@
             </c:forEach>
 
         </div>
-        <p><a href="<c:url value='/business/new' />">新規商談の登録</a></p>
+        <p><a href="<c:url value='/business/new_select' />">新規商談の登録</a></p>
 
     </c:param>
 </c:import>

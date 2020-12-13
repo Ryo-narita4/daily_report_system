@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Business;
+import models.Company;
 import models.Employee;
 import models.validators.BusinessValidator;
 import utils.DBUtil;
@@ -43,9 +44,12 @@ public class BusinessCreate extends HttpServlet {
 
             Business b = new Business();
 
+            Company c = em.find(Company.class,(Integer)(request.getSession().getAttribute("companyId")));
+
+
             b.setEmployee((Employee)request.getSession().getAttribute("login_employee"));
 
-            b.setCompany_name(request.getParameter("company_name"));
+            b.setCompany_name(c.getName());
             b.setTitle(request.getParameter("title"));
             b.setContent(request.getParameter("content"));
             Date plan = new Date(System.currentTimeMillis()); //仮に予定日が入力されていなかったら今日の日付が入るように設定しておく
@@ -76,6 +80,7 @@ public class BusinessCreate extends HttpServlet {
                 em.getTransaction().commit();
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
+                request.getSession().removeAttribute("companyId");
 
                 response.sendRedirect(request.getContextPath() + "/business/index");
             }

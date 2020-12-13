@@ -10,8 +10,8 @@
 
     </div>
 </c:if>
-<label for="company_name">企業名</label><br />
-<input type="text" name="company_name" value="${business.company_name}" /> <%--新規登録の場合は入力した値がname=で指定した変数に代入され、editでは --%>
+<p>企業名<br />
+<p><c:out value="${company.name}"></c:out><p>
 <br /><br />
 
 <label for="title">タイトル</label><br />
@@ -25,14 +25,6 @@
 <label for="plan">次回打合せ日</label><br />
 <input type="date" name="plan" value="<fmt:formatDate value='${business.plan}' pattern='yyyy-MM-dd' />" />
 <br /><br />
-
-<!--
-<label for="employee.name">担当者</label><br />
-<input type="text" name="employee.name" value="${sessionScope.login_employee.name}" />
-<br /><br />
-※login_employeeの名前が必ず登録されるように設定しました。
--->
-
 
 <input type="reset" value="リセットする" />&nbsp;&nbsp;
 <input type="hidden" name="_token" value="${_token}" /> <%--CSRF対策--%>
