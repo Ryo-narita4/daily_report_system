@@ -11,21 +11,28 @@
     </div>
 </c:if>
 <p>企業名<br />
-<p><c:out value="${company.name}"></c:out><p>
-<br /><br />
+    <c:choose>
+        <c:when test="${company != null}">
+            <p><c:out value="${company.name}"></c:out><p>
+        </c:when>
+        <c:otherwise>
+            <p><c:out value="${business.company.name}"></c:out></p>
+        </c:otherwise>
+    </c:choose>
+    <br /><br />
 
-<label for="title">タイトル</label><br />
-<input type="text" name="title" value="${business.title}" />
-<br /><br />
+    <label for="title">タイトル</label><br />
+        <input type="text" name="title" value="${business.title}" />
+    <br /><br />
 
-<label for="content">商談内容</label><br />
-<textarea name="content" rows="10" cols="50">${business.content}</textarea>
-<br /><br />
+    <label for="content">商談内容</label><br />
+        <textarea name="content" rows="10" cols="50">${business.content}</textarea>
+    <br /><br />
 
-<label for="plan">次回打合せ日</label><br />
-<input type="date" name="plan" value="<fmt:formatDate value='${business.plan}' pattern='yyyy-MM-dd' />" />
-<br /><br />
+    <label for="plan">次回打合せ日</label><br />
+        <input type="date" name="plan" value="<fmt:formatDate value='${business.plan}' pattern='yyyy-MM-dd' />" />
+    <br /><br />
 
-<input type="reset" value="リセットする" />&nbsp;&nbsp;
-<input type="hidden" name="_token" value="${_token}" /> <%--CSRF対策--%>
-<button type="submit">投稿</button>
+    <input type="reset" value="リセットする" />&nbsp;&nbsp;
+    <input type="hidden" name="_token" value="${_token}" /> <%--CSRF対策--%>
+    <button type="submit">投稿</button>

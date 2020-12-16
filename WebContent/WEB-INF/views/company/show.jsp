@@ -14,7 +14,7 @@
                         </tr>
                         <tr>
                             <th>所在地</th>
-                            <td><c:out value="${company.addoress}" /></td>
+                            <td><c:out value="${company.address}" /></td>
                         </tr>
                         <tr>
                             <th>担当者または代表者</th>
@@ -30,6 +30,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <p><a href="<c:url value='/company/edit?id=${company.id}' />">企業情報を編集する</a></p>
             </c:when>
             <c:otherwise>
                 <h2>お探しのデータは見つかりませんでした。</h2>

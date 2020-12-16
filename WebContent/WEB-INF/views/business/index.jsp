@@ -21,7 +21,7 @@
                 </tr>
                 <c:forEach var="business" items="${businesses}" varStatus="status">
                     <tr>
-                        <td><a href="<c:url value='/company/show?name=${business.company_name}' />"><c:out value="${business.company_name}" /></a></td>
+                        <td><a href="<c:url value='/company/show?id=${business.company.id}' />"><c:out value="${business.company.name}" /></a></td>
                         <td><c:out value="${business.title}" /></td>
                         <td><a href="<c:url value='/business/show?id=${business.id}' />">詳細</a></td>
                         <td><fmt:formatDate value='${business.plan}' pattern='yyyy-MM-dd' /></td>

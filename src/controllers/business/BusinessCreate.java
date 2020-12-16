@@ -49,7 +49,7 @@ public class BusinessCreate extends HttpServlet {
 
             b.setEmployee((Employee)request.getSession().getAttribute("login_employee"));
 
-            b.setCompany_name(c.getName());
+            b.setCompany(c);
             b.setTitle(request.getParameter("title"));
             b.setContent(request.getParameter("content"));
             Date plan = new Date(System.currentTimeMillis()); //仮に予定日が入力されていなかったら今日の日付が入るように設定しておく

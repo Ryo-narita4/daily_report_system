@@ -14,16 +14,16 @@ import models.Company;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class CompanyShow
+ * Servlet implementation class CompanyEdit
  */
-@WebServlet("/company/show")
-public class CompanyShow extends HttpServlet {
+@WebServlet("/company/edit")
+public class CompanyEdit extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CompanyShow() {
+    public CompanyEdit() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,11 +36,15 @@ public class CompanyShow extends HttpServlet {
 
         Company c = em.find(Company.class, Integer.parseInt(request.getParameter("id")));
 
+        em.close();
+
         request.setAttribute("company", c);
         request.setAttribute("_token", request.getSession().getId());
+        request.getSession().setAttribute("company_id", c.getId());
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/company/show.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/company/edit.jsp");
         rd.forward(request, response);
+
     }
 
 }

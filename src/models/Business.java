@@ -40,8 +40,9 @@ public class Business {
     @Column(name = "title" , length = 50 , nullable = false)
     private String title;
 
-    @Column(name = "company_name" , nullable = false)
-    private String company_name;
+    @ManyToOne
+    @JoinColumn(name = "company_id" , nullable = false)
+    private Company company;
 
     @Lob
     @Column(name = "content" , nullable = false)
@@ -80,12 +81,12 @@ public class Business {
         this.title = title;
     }
 
-    public String getCompany_name() {
-        return company_name;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCompany_name(String company_name) {
-        this.company_name = company_name;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public String getContent() {

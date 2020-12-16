@@ -11,7 +11,7 @@
                     <tbody>
                         <tr>
                             <th>企業名</th>
-                            <td><c:out value="${business.company_name}" /></td>
+                            <td><c:out value="${business.company.name}" /></td>
                         </tr>
                         <tr>
                             <th>タイトル</th>
